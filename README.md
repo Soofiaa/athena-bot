@@ -5,6 +5,7 @@ Avisa en un canal cuando Blizzard publica notas de parche nuevas y responde al c
 Además de los avisos de parches, incluye la tienda y consultas de Overwatch con datos de la [API OverFast](https://overfast-api.tekrop.fr):
 
 - `/heroe`: ficha de un héroe (rol, vida, origen, historia, habilidades y perks).
+- `/lore`: biografía completa de un héroe.
 - `/random`: héroe al azar, opcionalmente de un rol.
 - `/mapa` y `/modo`: mapas, ubicación y modos de juego.
 - `/perfil` y `/rangos`: perfil público de un jugador (BattleTag, p. ej. `Nombre#1234`), con rangos, estadísticas y héroes más usados.
@@ -12,6 +13,7 @@ Además de los avisos de parches, incluye la tienda y consultas de Overwatch con
 - `/trivia`: pregunta de opción múltiple generada con datos de los héroes.
 - `/meta`: héroes más elegidos, con más victorias o más baneados (competitivo o partida rápida, opcionalmente por rol). Usa cifras de Blizzard para la región Europa y todos los rangos, sin ajustar por rango ni mapa.
 - `/tienda`: tienda actual con imágenes.
+- `/idioma`: cambia el idioma del bot en el servidor (español o inglés). Requiere el permiso «Gestionar servidor».
 
 ## Requisitos
 
@@ -56,5 +58,5 @@ src/api.js              Cliente de la API OverFast, con caché
 src/locale.js           Traducciones de roles, subroles, modos y divisiones
 src/state.js            Guarda los parches y artículos ya enviados
 src/deploy-commands.js  Registra los comandos slash en Discord
-src/commands/           Un archivo por comando de consulta (heroe, mapa, modo, random, perfil, rangos, comp, trivia)
+src/commands/           Un archivo por comando de consulta (heroe, lore, mapa, modo, random, perfil, rangos, comp, trivia, meta, idioma); `index.js` los reúne
 ```
